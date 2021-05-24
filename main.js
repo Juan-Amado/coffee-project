@@ -1,21 +1,37 @@
 "use strict"
 
 function renderCoffee(coffee) {
-    var html = '<tr class="coffee">';
-    html += '<td>' + coffee.id + '</td>';
-    html += '<td>' + coffee.name + '</td>';
-    html += '<td>' + coffee.roast + '</td>';
-    html += '</tr>';
+    var container = document.createElement("div");
 
-    return html;
+    var child1 = document.createElement("div");
+    child1.innerText = coffee.id;
+    container.appendChild(child1)
+
+    var child2 = document.createElement("div");
+    child2.innerText = coffee.name;
+    container.appendChild(child2)
+
+    var child3 = document.createElement("div");
+    child3.innerText = coffee.roast;
+    container.appendChild(child3);
+
+    return container;
+
+    // var html = class = "coffee";
+    // html +=
+    // html +=  coffee.name;
+    // html +=  coffee.roast;
+    //
+    // return html;
+
 }
 
 function renderCoffees(coffees) {
-    var html = '';
+    var list = [];
     for(var i = coffees.length - 1; i >= 0; i--) {
-        html += renderCoffee(coffees[i]);
+        list.push(renderCoffee(coffees[i]));
     }
-    return html;
+    return list;
 }
 
 function updateCoffees(e) {
