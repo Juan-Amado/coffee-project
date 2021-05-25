@@ -48,6 +48,9 @@ function updateCoffees(e) {
             if (coffee.roast === selectedRoast) {
                 filteredCoffees.push(coffee);
             }
+            if (selectedRoast === "all"){
+                filteredCoffees.push(coffee);
+            }
         });
             tbody.innerHTML = " ";
         for(let coffee of renderCoffees(filteredCoffees)){
@@ -55,20 +58,10 @@ function updateCoffees(e) {
         }
 }
 
-function showCoffeeList(coffees){
-
-    var list = [];
-    for(var i = 0; i < coffees.length; i++) {
-        list.push(renderCoffee(coffees[i]));
-    }
-    return list;
-
-    
-
-}
 
 
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
+
 var coffees = [
     {id: 1, name: 'Light City', roast: 'light'},
     {id: 2, name: 'Half City', roast: 'light'},
