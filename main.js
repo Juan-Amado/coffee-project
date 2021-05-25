@@ -26,6 +26,17 @@ function renderCoffee(coffee) {
 
 }
 
+function name(){
+    //create a searchbar element and div
+    // set variable to coffee.name
+    //appendChild to the container
+    // create for loop
+    // create an if conditional that will display
+    // coffee based on user input
+
+
+}
+
 function renderCoffees(coffees) {
     var list = [];
     for(var i = 0; i < coffees.length; i++) {
@@ -91,4 +102,5 @@ showCoffeeList(coffees);
 
 window.addEventListener('DOMContentLoaded', (event) => {
     updateCoffees();
+
 });
