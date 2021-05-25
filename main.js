@@ -48,6 +48,9 @@ function updateCoffees(e) {
             if (coffee.roast === selectedRoast) {
                 filteredCoffees.push(coffee);
             }
+            if(selectedRoast === "all"){
+                filteredCoffees.push(coffee);
+            }
         });
             tbody.innerHTML = " ";
         for(let coffee of renderCoffees(filteredCoffees)){
@@ -63,7 +66,8 @@ function showCoffeeList(coffees){
     }
     return list;
 
-    
+
+
 
 }
 
