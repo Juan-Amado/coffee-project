@@ -21,19 +21,19 @@ function renderCoffee(coffee) {
 
 function nameSearch(coffees) {
 
-    var input = document.getElementById("searchbar").value;
+    var input = document.getElementById("searchbar").value.toLowerCase();
     document.getElementById("user-input").innerHTML = "You wrote: " + input;
 
     var list = [];
 
         for (var i = 0; i < coffees.length; i++) {
-            if (coffees[i].name.includes(input) && (coffees[i].roast === roastSelection.value || roastSelection.value === "all")) {
+            if (coffees[i].name.toLowerCase().includes(input.toLowerCase()) && (coffees[i].roast === roastSelection.value || roastSelection.value === "all")) {
                 list.push(coffees[i]);
             }
         }
 
     tbody.innerHTML = " ";
-    for (let coffee of renderCoffees(list)) {
+    for (let coffee of renderCoffees(list.sort())) {
         tbody.appendChild(coffee);
     }
 }
