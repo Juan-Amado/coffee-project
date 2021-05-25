@@ -17,58 +17,74 @@ function renderCoffee(coffee) {
 
     return container;
 
-    // var html = class = "coffee";
-    // html +=
-    // html +=  coffee.name;
-    // html +=  coffee.roast;
-    //
-    // return html;
-
 }
 
-function name(){
+// function name(coffee) {
+//     var input = document.getElementById("searchbar");
+//     input.innerText = coffee.name;
+//     var list = [];
+//     for (var i = 0; i < coffees.length; i++) {
+//         if (coffee.name ==="searchbar") {
+//             list.push(coffee);
+//         }
+//
+//     }
+//     return list;
+// }
+
+function pickles() {
+    var input = document.getElementById("searchbar").value;
+    document.getElementById("coffees").innerHTML = "You wrote: " + input;
+}
+
     //create a searchbar element and div
     // set variable to coffee.name
     //appendChild to the container
     // create for loop
     // create an if conditional that will display
     // coffee based on user input
+    // creat an even listener for user input
 
 
-}
 
+
+// function addPost() {
+//     var container = document.getElementById("blog-container")
+//     var newPost = document.createElement("p")
+//     var blogInput = document.getElementById("user-input")
+//     container.appendChild(newPost)
+//     newPost.innerText = blogInput.value
+// }
 function renderCoffees(coffees) {
     var list = [];
-    for(var i = 0; i < coffees.length; i++) {
+    for (var i = 0; i < coffees.length; i++) {
         list.push(renderCoffee(coffees[i]));
     }
     return list;
 }
 
 
-
 function updateCoffees(e) {
-    if(e) {
+    if (e) {
         e.preventDefault(); // don't submit the form, we just want to update the data
     }
-        var selectedRoast = roastSelection.value;
+    var selectedRoast = roastSelection.value;
 
-        var filteredCoffees = [];
+    var filteredCoffees = [];
 
-        coffees.forEach(function (coffee) {
-            if (coffee.roast === selectedRoast) {
-                filteredCoffees.push(coffee);
-            }
-            if (selectedRoast === "all"){
-                filteredCoffees.push(coffee);
-            }
-        });
-            tbody.innerHTML = " ";
-        for(let coffee of renderCoffees(filteredCoffees)){
-            tbody.appendChild(coffee);
+    coffees.forEach(function (coffee) {
+        if (coffee.roast === selectedRoast) {
+            filteredCoffees.push(coffee);
         }
+        if (selectedRoast === "all") {
+            filteredCoffees.push(coffee);
+        }
+    });
+    tbody.innerHTML = " ";
+    for (let coffee of renderCoffees(filteredCoffees)) {
+        tbody.appendChild(coffee);
+    }
 }
-
 
 
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
@@ -95,10 +111,8 @@ var submitButton = document.querySelector('#submit');
 var roastSelection = document.querySelector('#roast-selection');
 
 
-
 submitButton.addEventListener('click', updateCoffees);
 
-showCoffeeList(coffees);
 
 window.addEventListener('DOMContentLoaded', (event) => {
     updateCoffees();
