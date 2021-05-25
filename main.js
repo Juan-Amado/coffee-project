@@ -91,12 +91,12 @@ var coffees = [
 ];
 
 var tbody = document.getElementById("coffees");
-var submitButton = document.querySelector('#submit');
+// var submitButton = document.querySelector('#submit');
 var roastSelection = document.querySelector('#roast-selection');
 
 
-submitButton.addEventListener('click', updateCoffees);
-
+// submitButton.addEventListener('click', updateCoffees);
+roastSelection.addEventListener('change',updateCoffees);
 
 window.addEventListener('DOMContentLoaded', (event) => {
     updateCoffees();
