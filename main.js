@@ -19,47 +19,31 @@ function renderCoffee(coffee) {
 
 }
 
-// function name(coffee) {
-//     var input = document.getElementById("searchbar");
-//     input.innerText = coffee.name;
-//     var list = [];
-//     for (var i = 0; i < coffees.length; i++) {
-//         if (coffee.name ==="searchbar") {
-//             list.push(coffee);
-//         }
-//
-//     }
-//     return list;
-// }
+function nameSearch(coffees) {
 
-function pickles() {
     var input = document.getElementById("searchbar").value;
-    document.getElementById("coffees").innerHTML = "You wrote: " + input;
+    document.getElementById("user-input").innerHTML = "You wrote: " + input;
+
+    var list = [];
+
+        for (var i = 0; i < coffees.length; i++) {
+            if (coffees[i].name.includes(input) && (coffees[i].roast === roastSelection.value || roastSelection.value === "all")) {
+                list.push(coffees[i]);
+            }
+        }
+
+    tbody.innerHTML = " ";
+    for (let coffee of renderCoffees(list)) {
+        tbody.appendChild(coffee);
+    }
 }
 
-    //create a searchbar element and div
-    // set variable to coffee.name
-    //appendChild to the container
-    // create for loop
-    // create an if conditional that will display
-    // coffee based on user input
-    // creat an even listener for user input
-
-
-
-
-// function addPost() {
-//     var container = document.getElementById("blog-container")
-//     var newPost = document.createElement("p")
-//     var blogInput = document.getElementById("user-input")
-//     container.appendChild(newPost)
-//     newPost.innerText = blogInput.value
-// }
 function renderCoffees(coffees) {
     var list = [];
     for (var i = 0; i < coffees.length; i++) {
         list.push(renderCoffee(coffees[i]));
     }
+
     return list;
 }
 
