@@ -50,7 +50,6 @@ function renderCoffees(coffees) {
     return list;
 }
 
-
 function updateCoffees(e) {
     if (e) {
         e.preventDefault(); // don't submit the form, we just want to update the data
