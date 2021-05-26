@@ -5,15 +5,15 @@ function renderCoffee(coffee) {
     container.className = "d-flex"
 
     var child1 = document.createElement("div");
-    child1.innerText =  "#" + coffee.id;
+    child1.innerText =  "# " + coffee.id;
     container.appendChild(child1);
 
     var child2 = document.createElement("div");
-    child2.innerText = coffee.name;
+    child2.innerText = " " + coffee.name;
     container.appendChild(child2);
 
     var child3 = document.createElement("div");
-    child3.innerText = coffee.roast;
+    child3.innerText = " " + coffee.roast;
     container.appendChild(child3);
 
     return container;
