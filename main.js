@@ -31,7 +31,6 @@ function nameSearch(coffees) {
             list.push(coffees[i]);
         }
     }
-
     tbody.innerHTML = " ";
     for (let coffee of renderCoffees(list.sort())) {
         tbody.appendChild(coffee);
@@ -70,7 +69,45 @@ function updateCoffees(e) {
     }
 }
 
+function addCoffee(e){
+    //This function will add coffees that user wish to add
+    // to our object array called coffees
 
+    e.preventDefault();
+    let coffee = {
+        id: coffees.length+1,
+        name: newCoffeeName(),
+        roast: newRoast(),
+    }
+
+    coffees.push(coffee);
+    updateCoffees();
+}
+
+function newCoffeeName(){
+    return document.getElementById("addCoffeeInput").value;
+}
+
+function newRoast(){
+    return document.getElementById("roast-selection-add").value;
+}
+
+function removeCoffee(e){
+    // This function will remove coffees that user wish to remove
+    // to our object array called coffees
+
+    e.preventDefault();
+
+    let index1 = document.getElementById("addCoffeeInput").value;
+    let index2 = document.getElementById("roast-selection-add").value;
+
+    for(var i = 0; i < coffees.length; i++) {
+        if (index1 === coffees.name && index2 === coffees.roast) {
+            coffees.splice(index1[i], index2);
+        }
+    }
+    updateCoffees();
+}
 
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
 
@@ -91,17 +128,25 @@ var coffees = [
     {id: 14, name: 'French', roast: 'dark'},
 ];
 
-
-
 var tbody = document.getElementById("coffees");
 // var submitButton = document.querySelector('#submit');
 var roastSelection = document.querySelector('#roast-selection');
 
-
 // submitButton.addEventListener('click', updateCoffees);
 roastSelection.addEventListener('change', updateCoffees);
 
+//roast selection for the add coffee
+// var roastSelectionAdd = document.querySelector('#roast-selection-add');
+// roastSelectionAdd.addEventListener('change', addCoffee);
+
+// Create an eventlistener for a new button that will add coffees
+var addNew = document.getElementById("add");
+addNew.addEventListener('click', addCoffee);
+
+//create a new event listener for a remove button
+var removeNew = document.getElementById("remove");
+removeNew.addEventListener('click', removeCoffee);
+
 window.addEventListener('DOMContentLoaded', (event) => {
     updateCoffees();
-
 });
