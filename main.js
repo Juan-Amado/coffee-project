@@ -2,14 +2,15 @@
 
 function renderCoffee(coffee) {
     var container = document.createElement("div");
+    container.className = "d-flex"
 
     var child1 = document.createElement("div");
-    child1.innerText = coffee.id;
-    container.appendChild(child1)
+    child1.innerText =  "#" + coffee.id;
+    container.appendChild(child1);
 
     var child2 = document.createElement("div");
     child2.innerText = coffee.name;
-    container.appendChild(child2)
+    container.appendChild(child2);
 
     var child3 = document.createElement("div");
     child3.innerText = coffee.roast;
@@ -102,8 +103,8 @@ function removeCoffee(e){
     let index2 = document.getElementById("roast-selection-add").value;
 
     for(var i = 0; i < coffees.length; i++) {
-        if (index1 === coffees.name && index2 === coffees.roast) {
-            coffees.splice(index1[i], index2);
+        if (index1 === coffees[i].name && index2 === coffees[i].roast) {
+            coffees.splice(i, 1);
         }
     }
     updateCoffees();
