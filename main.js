@@ -2,18 +2,21 @@
 
 function renderCoffee(coffee) {
     var container = document.createElement("div");
-    container.className = "d-flex"
+    container.className = "d-flex mx-1"
 
     var child1 = document.createElement("div");
-    child1.innerText =  "# " + coffee.id;
+    child1.innerText = "# " + coffee.id;
+    child1.className = "mx-1";
     container.appendChild(child1);
 
     var child2 = document.createElement("div");
-    child2.innerText = " " + coffee.name;
+    child2.innerText = coffee.name ;
+    child2.className = "mx-1";
     container.appendChild(child2);
 
     var child3 = document.createElement("div");
-    child3.innerText = " " + coffee.roast;
+    child3.innerText = coffee.roast;
+    child3.className = "mx-1";
     container.appendChild(child3);
 
     return container;
@@ -99,11 +102,11 @@ function removeCoffee(e){
 
     e.preventDefault();
 
-    let index1 = document.getElementById("addCoffeeInput").value;
+    let index1 = document.getElementById("addCoffeeInput").value.toLowerCase();
     let index2 = document.getElementById("roast-selection-add").value;
 
     for(var i = 0; i < coffees.length; i++) {
-        if (index1 === coffees[i].name && index2 === coffees[i].roast) {
+        if (index1 === coffees[i].name.toLowerCase() && index2 === coffees[i].roast) {
             coffees.splice(i, 1);
         }
     }
