@@ -42,6 +42,7 @@ h1 {
 
 #coffees {
     color: #114775;
+    margin-left: 40%;
 }
 
 #blur  {
@@ -53,4 +54,12 @@ h1 {
     content: " ";
     backdrop-filter: blur(4px) grayscale(20%);
     z-index: 1;
+}
+
+#coffees-container {
+    position: relative;
+}
+
+#add-remove-container {
+
 }
