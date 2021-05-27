@@ -6,25 +6,12 @@ body {
     background: linear-gradient(to bottom,   #d65e12 0%,  #ffffff 33%, #ffffff 66%, #e81219 100%);
 }
 
-table {
-    border-collapse: collapse;
-    margin: 15px 0;
-}
-
-td, th {
-    border: 1px solid black;
-    padding: 5px 10px;
-}
-
-.row {
-    width: 50%;
-}
 
 .jumbotron {
     background-image: url("img/coffee-bean.jpeg");
     display: flex;
     justify-content: center;
-    width: 80%;
+    width: 90%;
     text-align: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -45,21 +32,15 @@ h1 {
     margin-left: 40%;
 }
 
-#blur  {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    content: " ";
-    backdrop-filter: blur(4px) grayscale(20%);
-    z-index: 1;
-}
+/*#blur  {*/
+/*    position: absolute;*/
+/*    top: 0;*/
+/*    left: 0;*/
+/*    width: 100%;*/
+/*    height: 100%;*/
+/*    content: " ";*/
+/*    backdrop-filter: blur(4px) grayscale(20%);*/
+/*    z-index: 1;*/
+/*}*/
 
-#coffees-container {
-    position: relative;
-}
 
-#add-remove-container {
-
-}

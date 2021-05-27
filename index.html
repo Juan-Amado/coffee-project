@@ -16,19 +16,17 @@
 
         <div class="jumbotron jumbotron-fluid">
             <div id="blur">
-            <div class="container">
-
-                <h1 class="coffeeHeader display-4">素晴らしいコーヒー</h1>
-
-            </div>
+                <div class="container">
+                    <h1 class="coffeeHeader">素晴らしいコーヒー</h1>
+                </div>
             </div>
         </div>
 
         <div class="container">
             <div class="row">
-                <div class="col-6">
+                <div class="col-sm-12 col-lg-6">
 
-                    <form>
+                    <form class="d-flex justify-content-center mb-3 ml-2">
                         <label for="roast-selection"></label>
                         <select id="roast-selection">
                             <option>all</option>
@@ -36,29 +34,35 @@
                             <option>medium</option>
                             <option>dark</option>
                         </select>
-                    </form>
 
-                    <input type="text" id="searchbar" oninput="nameSearch(coffees)"/>
+                        <input type="text" id="searchbar" class="col-sm-6 ml-2" oninput="nameSearch(coffees)"/>
+                    </form>
                 </div>
 
+                <div class="col-sm-12 col-md-12 col-lg-6 mb-3" id="add-remove-container">
+                    <form class="d-flex justify-content-center ml-2 mb-2">
+                        <label for="roast-selection"></label>
+                        <select id="roast-selection-add">
+                            <option>all</option>
+                            <option>light</option>
+                            <option>medium</option>
+                            <option>dark</option>
+                        </select>
 
-                <div class="col-6" id="add-remove-container">
-                        <form>
-                            <label for="roast-selection"></label>
-                            <select id="roast-selection-add">
-                                <option>all</option>
-                                <option>light</option>
-                                <option>medium</option>
-                                <option>dark</option>
-                            </select>
-                        </form>
+                        <input type="text" id="addCoffeeInput" class="col-sm-6 ml-2 " oninput="nameSearch()"/>
 
-                        <input type="text" id="addCoffeeInput" oninput="nameSearch()"/>
+                    </form>
 
-                        <button id="add">Add Coffee</button>
-                        <button id="remove">Remove Coffee</button>
+
+                    <div class="d-flex justify-content-center">
+                        <button id="add" class="col-sm-4 col-lg-4 mb-4 mt-2">Add Coffee</button>
+
+<!--                    </div>-->
+<!--                    <div class="d-flex justify-content-center">-->
+                        <button id="remove" class="col-sm-4 col-lg-4 mb-4 ml-2 mt-2">Remove Coffee</button>
                     </div>
 
+                </div>
             </div>
         </div>
 
