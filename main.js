@@ -1,6 +1,7 @@
 "use strict"
 
 function renderCoffee(coffee) {
+
     var container = document.createElement("div");
     container.className = "d-flex mx-1"
 
@@ -46,12 +47,12 @@ function renderCoffees(coffees) {
     for (var i = 0; i < coffees.length; i++) {
         list.push(renderCoffee(coffees[i]));
     }
-
     return list;
 }
 
 function updateCoffees(e) {
-    if (e) {
+
+    if(e) {
         e.preventDefault(); // don't submit the form, we just want to update the data
     }
     var selectedRoast = roastSelection.value;
@@ -137,10 +138,6 @@ var roastSelection = document.querySelector('#roast-selection');
 
 // submitButton.addEventListener('click', updateCoffees);
 roastSelection.addEventListener('change', updateCoffees);
-
-//roast selection for the add coffee
-// var roastSelectionAdd = document.querySelector('#roast-selection-add');
-// roastSelectionAdd.addEventListener('change', addCoffee);
 
 // Create an eventlistener for a new button that will add coffees
 var addNew = document.getElementById("add");
